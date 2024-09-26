@@ -21,7 +21,7 @@ const Login = () => {
         const userData = {
           firebaseUid: user.uid,
           email: user.email,
-          displayName: user.displayName, // Optional, can store display name
+          displayName: user.displayName, 
         };
 
         try {

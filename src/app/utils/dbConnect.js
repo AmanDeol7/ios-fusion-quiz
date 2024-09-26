@@ -1,21 +1,22 @@
 // src/utils/dbConnect.js
 import mongoose from 'mongoose';
 
-let isConnected = false; // Track connection status
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+
+
 
 const dbConnect = async () => {
-  if (isConnected) {
-    return;
-  }
+    try{
+        await mongoose.connect(process.env.MONGODB_URI);
+        console.log("database has been connected")
+    }
+    catch(err){
+        console.log(`error is ${err.message}`);
 
-  try {
-    const db = await mongoose.connect(process.env.MONGODB_URI);
-
-    isConnected = db.connections[0].readyState === 1;
-    console.log('Connected to MongoDB');
-  } catch (error) {
-    console.error('MongoDB connection failed:', error);
-  }
-};
-
+    }
+ 
+}
 export default dbConnect;

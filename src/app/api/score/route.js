@@ -2,8 +2,15 @@
 import dbConnect from '../../utils/dbConnect';
 import User from '../../models/userModel';
 
+import dotenv from 'dotenv';
+
+
+dotenv.config();
+
 export async function POST(req) {
   await dbConnect();
+
+
   
   try {
     const { firebaseUid, email, score } = await req.json();

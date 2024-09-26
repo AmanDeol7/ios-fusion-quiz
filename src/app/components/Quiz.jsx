@@ -86,8 +86,9 @@ const Quiz = () => {
   }
 
   return (
-    <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
+    <div className="h-[50rem] w-full dark:bg-black   dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <h1 className="mb-9 text-3xl"> {user.displayName}</h1>
       <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
         <div>
           <h3 className="font-bold mb-4">
@@ -107,14 +108,19 @@ const Quiz = () => {
           ))}
         </div>
 
-        <button
-          onClick={handleNextQuestion}
-          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          {currentQuestionIndex === quizQuestions.length - 1
+      
+          
+        
+        <button className="p-[3px] relative mt-3" onClick={handleNextQuestion}>
+  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+  <div className="px-6 py-2  bg-zinc-900 rounded-[6px]   relative group transition duration-200 text-white hover:bg-transparent">
+    
+    {currentQuestionIndex === quizQuestions.length - 1
             ? "Submit"
             : "Next"}
+            </div>
         </button>
+        
       </BackgroundGradient>
     </div>
   );

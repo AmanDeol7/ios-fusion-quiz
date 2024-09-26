@@ -5,7 +5,15 @@ import Login from "./components/Login";
 import { UserAuth } from "./context/AuthContext";
 import {useState, useEffect} from "react"
 import Quiz from "./components/Quiz";
+import dbConnect from "./utils/dbConnect";
+import dotenv from 'dotenv'
+
 export default function Home() {
+
+  dotenv.config()
+  dbConnect();
+
+  
   const { user, logout } = UserAuth();  
   const [isLoading, setIsLoading] = useState(true);
  
@@ -23,7 +31,7 @@ export default function Home() {
    <>
    <div className="flex flex-col justify-center items-center h-[100vh]">
     {user?  <Quiz /> : <Login/>}
-    
+    {/* <Login /> */}
     {user&& <>
       <button onClick={logout} >Logout</button>
     

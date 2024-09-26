@@ -1,9 +1,18 @@
 // src/app/api/users/route.js
-import dbConnect from '../../utils/dbConnect';
+
 import User from '../../models/userModel';
 
+import  dotenv  from 'dotenv';
+import dbConnect from '../../utils/dbConnect';
+
+
+dotenv.config()
+
+
 export async function POST(req) {
-  await dbConnect(); // Ensure the DB connection is established
+ // Ensure the DB connection is 
+  await dbConnect();
+
 
   try {
     
