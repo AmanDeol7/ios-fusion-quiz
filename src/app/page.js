@@ -24,18 +24,19 @@ export default function Home() {
   }, [user]);
 
   if (isLoading) {
-    return <p>Loading...</p>;  // Show a loading state while Firebase checks user
+    return <p className="flex justify-center items-center ">Loading...</p>;  // Show a loading state while Firebase checks user
   }
 
   return (
    <>
    <div className="flex flex-col justify-center items-center h-[100vh]">
-    {user?  <Quiz /> : <Login/>}
+    {/* {user?  <Quiz /> : <Login/>} */}
     {/* <Login /> */}
-    {user&& <>
+    {/* {user&& <>
       <button onClick={logout} >Logout</button>
     
-    </>}
+    </>} */}
+    <Login />
    
     {/* <h1>Welcome to IOS Fusion</h1>
     {user } */}
