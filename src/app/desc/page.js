@@ -1,6 +1,7 @@
 
 import { BackgroundBeams } from "../components/ui/Background"
 import  Image from "next/image"
+import diya from "../../../public/diya.jpg"
 const page = () => {
   return (<>
     <BackgroundBeams />
@@ -18,7 +19,8 @@ const page = () => {
 
         </div>
 
-    <Image src="/diya.jpg " width={300} height={700} className="rounded-xl"/>
+    <Image src="/diya.jpg" width={300} height={700} className="rounded-xl"/>
+    {/* <img src={diya} alt="diya" /> */}
     </div>
     </>
   )
